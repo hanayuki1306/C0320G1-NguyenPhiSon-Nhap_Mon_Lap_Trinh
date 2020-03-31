@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        while (true) {
+            var SoDola = prompt("nhap vao so dola")
+
+            // document.write("what type is this : ", typeof(SoDola))
+            b = parseFloat(SoDola)
+            //
+            if (Number.isInteger(b)) {
+                // document.write("gia tri cua a la mot so nguyen")
+                var ketqua = SoDola * 23000;
+                document.write(" Số tiền quy đổi được là: " + ketqua);
+                break
+            } else {
+                alert(" Số dola là số và không được lẻ, vui lòng nhập lại !!!")
+            };
+        }
+
+</script>
+
+</body>
+</html>
