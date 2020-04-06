@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> Xin hãy nhập điểm 3 môn Toán Lý và Hóa  </h3>
+<input type="number" placeholder="Nhâp điểm môn Toán  " id="DiemToan">
+<button type="button" onclick="getInputValue()"; > Môn Toán </button>
+<br><br>
+<input type="number" placeholder="Nhâp điểm môn Lý  " id="DiemLy">
+<button type="button" onclick="getInputValue()"; > Môn Lý </button>
+<br><br>
+<input type="number" placeholder="Nhâp điểm môn Hóa  " id="DiemHoa">
+<button type="button" onclick="getInputValue()"; > Môn Hóa </button>
+<br><br>
+<h3> Kết quả điểm trung bình là: </h3>
+<button type="button" onclick="diemtrungbinh()"; > Click to see</button>
+
+<!--<button onclick="goBack()">Go Back</button>-->
+<script>
+    var DiemToan = document.getElementById("DiemToan");
+    var DiemLy = document.getElementById("DiemLy");
+    var DiemHoa = document.getElementById("DiemHoa");
+
+    function goBack() {
+        location.reload();
+    }
+
+    function getInputValue() {
+        DiemToan = parseInt(DiemToan.value);
+        DiemLy = parseInt(DiemLy.value);
+        DiemHoa = parseInt(DiemHoa.value);
+        if (!isNaN(DiemToan)||!isNaN(DiemLy)||!isNaN(DiemHoa)) {
+            document.write("Nhập thành công + <button onclick=\"goBack()\">Go Back</button>")
+        } else {
+            document.write("Input fail + <button onclick=\"goBack()\">Go Back</button>")
+        }
+    }
+
+    function diemtrungbinh() {
+        DiemToan = parseInt(DiemToan.value);
+        DiemLy = parseInt(DiemLy.value);
+        DiemHoa = parseInt(DiemHoa.value);
+        var diemtrungbinh = (DiemToan + DiemLy + DiemHoa) / 3
+        document.write("Day la diem trung binh " + diemtrungbinh)
+    }
+
+</script>
+
+</body>
+</html>

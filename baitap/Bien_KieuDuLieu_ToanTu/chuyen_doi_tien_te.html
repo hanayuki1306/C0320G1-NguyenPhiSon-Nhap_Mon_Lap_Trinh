@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Đây là chuyển đổi tiền tệ </h3>
+    <br><br>
+<!--    <h5 id="Amount">Amount</h5>-->
+<!--    <input type="number" placeholder="Amount" id="Amount_align">-->
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Curency</th>
+            <th></th>
+        </tr>
+            <th>
+                <input type="number" placeholder="Amount" onclick="getInputValue()" id="getAmount">
+            </th>
+
+            <th>
+                <select id="From_Currency">
+                    <option>Vietnam</option>
+                    <option>China</option>
+                    <option>USA</option>
+                </select>
+            </th>
+
+            <th>
+<!--                <input type="text" placeholder="ToCurrency" id="ToCurrency_align">-->
+                <select id="To_Currency">
+                    <option>Vietnam</option>
+                    <option>China</option>
+                    <option>USA</option>
+                </select>
+            </th>
+            <th>
+                <button  id="result"  type="button" onclick="show_message();">Convert here </button>
+            </th>
+    </table>
+
+<!--    <script>-->
+<!--    // document.getElementById("Amount_align").style.textAlign = "left";-->
+<!--    // document.getElementById("FromCurrency_align").style.textAlign = "left";-->
+<!--    // document.getElementById("ToCurrency_align").style.textAlign = "left";-->
+
+<!--// Quy đổi giá trị-->
+<!--// input vào  amount-->
+
+<script>
+
+    // alert(amount)
+
+
+
+
+    function show_message() {
+        let amount = document.getElementById("getAmount") ;
+        amount = parseInt(amount.value)
+
+        let Convert_value
+
+        let From_Currency = document.getElementById("From_Currency")
+        let To_Curency = document.getElementById("To_Currency")
+
+        if (From_Currency.value == "China") {
+            switch (To_Curency.value) {
+                case "USA":
+                    Convert_value = amount*0.14
+                    break;
+                case "Vietnam":
+                    Convert_value = amount*3.333
+                    break;
+                default:
+                    Convert_value = amount
+            }
+        } else if (From_Currency.value == "Vietnam") {
+            switch (To_Curency.value) {
+                case "USA":
+                    Convert_value = amount / 23000
+                    break;
+                case "China":
+                    Convert_value = amount / 3332
+                    break;
+                default:
+                    Convert_value = amount
+            }
+        } else {
+            switch (To_Curency.value) {
+                case "Vietnam":
+                    Convert_value = amount*23000
+                    break;
+                case "China":
+                    Convert_value = amount*7092
+                    break;
+                default:
+                    Convert_value = amount
+
+            }
+        }
+        document.getElementById("result").innerHTML = "hello, this is result"
+        document.write("" + Convert_value)
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>
