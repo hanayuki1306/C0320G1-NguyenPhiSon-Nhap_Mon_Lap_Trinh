@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2> Caculator </h2>
+    <input type="number" placeholder="Value1" id="value1">
+    <input type="number" placeholder="Value2" id="value2">
+
+    <br><br>
+
+    <button type="button" onclick="Addition()"> Addition(+)</button>
+    <button type="button" onclick="Subtraction()"> Subtraction(-)</button>
+    <button type="button" onclick="Multiplication()"> Multiplication(X)</button>
+    <button type="button" onclick="Division()"> Division(/)</button>
+
+    <br><br>
+
+
+<script>
+    let res
+    let value_A = document.getElementById("value1")
+    let value_B = document.getElementById("value2")
+    function Addition() {
+        res = value_A.value + value_B.value
+
+        alert("Result Division" + res)
+    }
+    function Subtraction() {
+        res = value_A.value - value_B.value
+        alert("Result Division" + res)
+    }
+    function Multiplication() {
+        res = value_A.value * value_B.value
+        alert("Result Division" + res)
+    }
+    function Division() {
+        res = value_A.value / value_B.value
+        alert("Result Division: " + res)
+    }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let number = 3
+    // if (number>= 5) {
+    //         number += 1;
+    //         document.writeln("this is result: " + number)
+    // } else {
+    //     number -= 1
+    //     document.writeln("this is result: " + number)
+    // }
+    // let number = 5;
+    //
+    // if (number++ > 5) {
+    //     number += 1;
+    //     document.writeln("this is result1: " + number)
+    // } else {
+    //     number = number ;
+    //     document.writeln("this is result2: " + number)
+    // }
+    let day = "Mon";
+    let message = "";
+
+    switch (day) {
+        case "Mon":
+            message = "Ngày đầu tuần";
+
+        case "Wed":
+            message = "Ngày giữa tuần";
+
+        case "Sat":
+        case "Sun":
+            message = "Ngày nghỉ";
+    }
+    alert("res : " + message)
+</script>
+
+</body>
+</html>
