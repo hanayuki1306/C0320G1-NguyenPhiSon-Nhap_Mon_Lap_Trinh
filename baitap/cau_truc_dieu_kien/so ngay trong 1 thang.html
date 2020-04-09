@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id="nhapthang" type="number"  placeholder="nhap vao so thang">
+    <button type="button" onclick="tinh_so_ngay()"> Tính số ngày </button>
+    <br>
+
+    <script>
+
+        function tinh_so_ngay() {
+            var thang = parseInt(document.getElementById("nhapthang").value);
+            // document.write("type tháng : "+ typeof(thang))
+            // document.writeln("thang: " + thang)
+            if (thang <= 12 && thang>0) {
+
+                switch (thang) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+
+                        document.writeln("thang nay co 31 ngay");
+                        break;
+                    case 2:
+                        document.writeln("thang nay co 28 hoac 29 nay");
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        document.writeln("thang nay co 30 nay");
+                        break
+
+                    default:
+                        document.writeln("sai yeu cau roi, moi nhap lai");
+                }
+            } else {
+                document.writeln("sai yeu cau roi, moi nhap lai");
+            }
+        }
+
+    </script>
+
+
+
+</body>
+</html>
