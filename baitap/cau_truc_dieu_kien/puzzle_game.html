@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <img src="img_puzzle_game/funny-cat1_part1x1.jpg" width = "15%" onclick="chuyenhinh(1)" id= "img1">
+    <br>
+    <img src="img_puzzle_game/funny-cat1_part2x1.jpg" width = "15%" onclick="chuyenhinh(2)" id= "img2">
+    <br>
+    <img src="img_puzzle_game/funny-cat1_part3x1.jpg" width = "15%" onclick="chuyenhinh(3)" id= "img3">
+    <br>
+    <img src="img_puzzle_game/funny-cat1_part4x1.jpg" width = "15%" onclick="chuyenhinh(4)" id= "img4">
+    <br>
+    <img src="img_puzzle_game/funny-cat1_part2x1.jpg" width = "15%" onclick="chuyenhinh(5)" id= "img5">
+    <br>
+<!--    <input type="checkbox" placeholder="result" id="test">-->
+
+<!--    <img src="img_puzzle_game/panda_swap_part1x1.jpg" height="79" width="304"/>-->
+    <script>
+        let hinh1 = document.getElementById("img1")
+        let hinh2 = document.getElementById("img2")
+        let hinh3 = document.getElementById("img3")
+        let hinh4 = document.getElementById("img4")
+        let hinh5 = document.getElementById("img5")
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min
+        }
+
+        function chuyenhinh(number){
+            let random = getRandomInt(1,4)
+            switch (number) {
+                case 1:
+                    if (random == 1){
+                        hinh1.src = "img_puzzle_game/funny-cat1_part1x1.jpg"
+                    } else if (random == 2){
+                        hinh1.src = "img_puzzle_game/monkey_part1x1.jpg"
+                    } else  {
+                        hinh1.src = "img_puzzle_game/panda_swap_part1x1.jpg"
+                    }
+                    break
+                    // if (hinh1.getAttribute("src") === "img_puzzle_game/funny-cat1_part1x1.jpg") {
+                    //     hinh1.src = "img_puzzle_game/funny-cat1_part1x1.jpg"
+                    // } else if (hinh1.getAttribute("src") ==="img_puzzle_game/monkey_part1x1.jpg") {
+                    //     hinh1.src = "img_puzzle_game/monkey_part1x1.jpg"
+                    // } else if (hinh1.getAttribute("src") === "img_puzzle_game/panda_swap_part1x1.jpg"){
+                    //     hinh1.src = "img_puzzle_game/panda_swap_part1x1.jpg"
+                    // }
+                    // break
+                case 2:
+                    if (random == 1){
+                        hinh2.src = "img_puzzle_game/funny-cat1_part2x1.jpg"
+                    } else if (random == 2){
+                        hinh2.src = "img_puzzle_game/monkey_part2x1.jpg"
+                    } else  {
+                        hinh2.src = "img_puzzle_game/panda_swap_part2x1.jpg"
+                    }
+                    break
+
+
+                    // if (hinh2.getAttribute("src") === "img_puzzle_game/funny-cat1_part2x1.jpg") {
+                    //     hinh2.src = "img_puzzle_game/funny-cat1_part2x1.jpg"
+                    // } else if (hinh2.getAttribute("src") ==="img_puzzle_game/monkey_part2x1.jpg") {
+                    //     hinh2.src = "img_puzzle_game/monkey_part2x1.jpg"
+                    // } else if (hinh2.getAttribute("src") === "img_puzzle_game/panda_swap_part2x1.jpg"){
+                    //     hinh2.src = "img_puzzle_game/panda_swap_part2x1.jpg"
+                    // }
+                    // break
+                case 3:
+                    if (random == 1){
+                        hinh3.src = "img_puzzle_game/funny-cat1_part3x1.jpg"
+                    } else if (random == 2){
+                        hinh3.src = "img_puzzle_game/monkey_part3x1.jpg"
+                    } else  {
+                        hinh3.src = "img_puzzle_game/panda_swap_part3x1.jpg"
+                    }
+                    break
+
+                    // if (hinh3.getAttribute("src") === "img_puzzle_game/funny-cat1_part3x1.jpg") {
+                    //     hinh3.src = "img_puzzle_game/funny-cat1_part3x1.jpg"
+                    // } else if (hinh3.getAttribute("src") ==="img_puzzle_game/monkey_part3x1.jpg") {
+                    //     hinh3.src = "img_puzzle_game/monkey_part3x1.jpg"
+                    // } else if (hinh3.getAttribute("src") === "img_puzzle_game/panda_swap_part3x1.jpg"){
+                    //     hinh3.src = "img_puzzle_game/panda_swap_part3x1.jpg"}
+                        // break
+                case 4:
+                    if (random == 1){
+                        hinh4.src = "img_puzzle_game/funny-cat1_part4x1.jpg"
+                    } else if (random == 2){
+                        hinh4.src = "img_puzzle_game/monkey_part4x1.jpg"
+                    } else  {
+                        hinh4.src = "img_puzzle_game/panda_swap_part4x1.jpg"
+                    }
+                    break
+                    // if (hinh4.getAttribute("src") === "img_puzzle_game/funny-cat1_part4x1.jpg") {
+                    //     hinh4.src = "img_puzzle_game/funny-cat1_part4x1.jpg"
+                    // } else if (hinh4.getAttribute("src") ==="img_puzzle_game/monkey_part4x1.jpg") {
+                    //     hinh4.src = "img_puzzle_game/monkey_part4x1.jpg"
+                    // } else if (hinh4.getAttribute("src") === "img_puzzle_game/panda_swap_part4x1.jpg"){
+                    //     hinh4.src = "img_puzzle_game/panda_swap_part4x1.jpg"}
+                        // break
+                case 5:
+                    if (random == 1){
+                        hinh5.src = "img_puzzle_game/funny-cat1_part5x1.jpg"
+                    } else if (random == 2){
+                        hinh5.src = "img_puzzle_game/monkey_part5x1.jpg"
+                    } else  {
+                        hinh5.src = "img_puzzle_game/panda_swap_part5x1.jpg"
+                    }
+                    break
+                    // if (hinh5.getAttribute("src") === "img_puzzle_game/funny-cat1_part5x1.jpg") {
+                    //     hinh5.src = "img_puzzle_game/funny-cat1_part5x1.jpg"
+                    // } else if (hinh5.getAttribute("src") ==="img_puzzle_game/monkey_part5x1.jpg") {
+                    //     hinh5.src = "img_puzzle_game/monkey_part5x1.jpg"
+                    // } else if (hinh5.getAttribute("src") === "img_puzzle_game/panda_swap_part5x1.jpg"){
+                    //     hinh5.src = "img_puzzle_game/panda_swap_part5x1.jpg"}
+                        // break
+            }
+        }
+
+        function checkcorrect() {
+            if (hinh1.getAttribute("src") ==="img_puzzle_game/funny-cat1_part1x1.jpg"
+                && hinh2.getAttribute("src")=== "img_puzzle_game/funny-cat1_part2x1.jpg"
+                && hinh3.getAttribute("src")==="img_puzzle_game/funny-cat1_part3x1.jpg"
+                && hinh4.getAttribute("src")==="img_puzzle_game/funny-cat1_part4x1.jpg"
+                && hinh5.getAttribute("src")==="img_puzzle_game/funny-cat1_part5x1.jpg"){
+                    alert(" Correct cat")
+            } else if (hinh1.getAttribute("src") === "img_puzzle_game/monkey_part1x1.jpg"
+                && hinh2.getAttribute("src")==="img_puzzle_game/monkey_part2x1.jpg"
+                && hinh3.getAttribute("src")==="img_puzzle_game/monkey_part3x1.jpg"
+                && hinh4.getAttribute("src")==="img_puzzle_game/monkey_part4x1.jpg"
+                && hinh5.getAttribute("src")==="img_puzzle_game/monkey_part5x1.jpg"){
+                alert(" Correct monkey")
+            } else if (hinh1.getAttribute("src") === "img_puzzle_game/panda_swap_part1x1.jpg"
+                && hinh2.getAttribute("src")==="img_puzzle_game/panda_swap_part2x1.jpg"
+                && hinh3.getAttribute("src")==="img_puzzle_game/panda_swap_part3x1.jpg"
+                && hinh4.getAttribute("src")==="img_puzzle_game/panda_swap_part4x1.jpg"
+                && hinh5.getAttribute("src")==="img_puzzle_game/panda_swap_part5x1.jpg"){
+                alert("Correct panda")
+            }
+        }
+
+        function ready_play(){
+            window.addEventListener("click", checkcorrect)
+        }
+        onload = ready_play()
+
+
+    </script>
+</body>
+</html>
