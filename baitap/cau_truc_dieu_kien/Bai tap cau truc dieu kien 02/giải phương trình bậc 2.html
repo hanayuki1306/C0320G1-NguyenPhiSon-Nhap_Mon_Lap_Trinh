@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    alert("Nhập các dữ liệu của phương trình bậc 2 theo Ax2 + Bx + C = 0")
+    let a= prompt("nhập vào A:")
+    a = parseInt(a)
+    let b = prompt("nhập vào B:")
+    b = parseInt(b)
+    let c = prompt("nhập vào C:")
+    c  = parseInt(c)
+    let res1
+    let res2
+
+
+    let delta = b*b - 4*a*c
+    console.log("delta:" + delta)
+    console.log(typeof(delta))
+// ax2 + bx + c = 0
+    if (a == 0 ){
+        alert("Giải như giải pt bậc 1")
+        if (c ==0){
+            alert("phuong trinh có vô số nghiệm")
+        } else if (b == 0 ){
+            alert("phương trình vô nghiệm")
+        } else {
+            res1 = (-c)/b
+            alert("phuong trinh co nghiem: " + res1)
+        }
+    } if (a != 0){
+        if (delta < 0 ){
+            alert("phuong trinh vo nghiem")
+        } else if ( delta == 0){
+            res1 = (-b)/(2*a)
+            document.write("phuong trinh co nghiem kep x1 = x2 = " + res1)
+        } else if (delta > 0){
+            res1 = (-b - Math.sqrt(delta)/ (2*A))
+            console.log("res1" + res1)
+            res2 = (-b + Math.sqrt(delta)/ (2*A))
+            console.log("res2" + res2)
+            document.write("Nghiệm 1 " + res1)
+            document.write("Nghiệm 2" + res2)
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

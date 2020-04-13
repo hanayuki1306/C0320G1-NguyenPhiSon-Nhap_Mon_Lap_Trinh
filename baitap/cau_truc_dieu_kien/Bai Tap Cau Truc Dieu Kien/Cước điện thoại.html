@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cước điện thoại</title>
+</head>
+<body>
+<!--Viết chương trình để tính cước điện thoại bàn cho một hộ gia đình với các thông số như sau:-->
+
+<!--Phí thuê bao bắt buộc là 25 nghìn.-->
+<!--600 đồng cho mỗi phút gọi của 50 phút đầu tiên.-->
+<!--400 đồng cho mỗi phút gọi của 150 phút tiếp theo.-->
+<!--200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.-->
+<script>
+    a = prompt("Nhập vào số phút gọi của tháng vừa qua")
+    a = parseInt(a)
+    var res
+    if (a>0 && a <=50 ){
+        res = 25000 + a*600
+        alert("Số tiền phải trả là: " + res)
+    } else if (a>50 && a<=200){
+        res = 25000 + 50*600 + (a-50)*400
+        alert("Số tiền phải trả là: " + res)
+    } else if(a>200){
+        res =25000 + 50*600 + 150*400 + (a - 200 )*200
+        alert("Số tiền phải trả là: " + res)
+    } else {
+        alert("số tiền bạn phải trả là 25000")
+    }
+</script>
+
+</body>
+</html>

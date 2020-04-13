@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        a = prompt("nhập vào cạnh a")
+        a = parseInt(a)
+        b = prompt("nhập vào cạnh b")
+        b= parseInt(b)
+        c  = prompt("nhập vào cạnh c")
+        c = parseInt(c)
+
+        if(a == 0 || b == 0 || c==0){
+            alert("không là cạnh của tam giác")
+        } else if (a>0 && b>0 && c > 0 ) {
+            alert("là cạnh của tam giác")
+        } else if ((a + b)>c){
+            alert("là cạnh của tam giác")
+        } else if ((b+c)>a){
+            alert("là cạnh của tam giác")
+        } else if ((a + c)>a){
+            alert("là cạnh của tam giác")
+        } else {
+            alert("không là cạnh của tam giác")
+        }
+
+    </script>
+</body>
+</html>

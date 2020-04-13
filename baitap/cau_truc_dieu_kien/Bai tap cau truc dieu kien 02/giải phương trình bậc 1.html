@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phương tình bậc 1</title>
+</head>
+<body>
+<!--// ax + b = 0-->
+<!--// ax + b + c = 0-->
+<!--//ax = 0-->
+<!--// ax = b-->
+<!--ax =-->
+    <script>
+        alert("đây là phương trình dạng ax + b = 0")
+        let a = prompt('nhap vào a theo dạng trên:')
+        a = parseInt(a)
+        let b = prompt('nhập vào b')
+        b = parseInt(b)
+        let x
+        if (a == 0) {
+            if (b == 0 ){
+                alert("phương trình có vô số nghiêm")
+            } else {
+                alert("phương trình trên vô nghiệm")
+            }
+        } else if (b == 0 ) {
+            alert("phương trình có nghiệm  x = 0")
+        } else {
+            x = (-b)/a
+            alert("Phương trình có nghiệm x = " + x)
+        }
+    </script>
+
+</body>
+</html>

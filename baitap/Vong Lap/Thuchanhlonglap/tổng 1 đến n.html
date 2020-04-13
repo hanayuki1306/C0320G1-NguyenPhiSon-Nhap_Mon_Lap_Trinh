@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2> Tổng của n </h2>
+    <p id = "res"></p>
+    <script>
+        var n = prompt("nhập vào n ")
+        n = parseInt(n)
+        console.log(typeof(n))
+        console.log(n)
+        let i = 1
+        var ketqua = 0
+
+        for (i = 1;i <= n; i++){
+            ketqua += i
+            console.log(ketqua)
+        }
+        document.getElementById("res").innerHTML = ketqua
+        // alert(ketqua)
+    </script>
+
+
+</body>
+</html>

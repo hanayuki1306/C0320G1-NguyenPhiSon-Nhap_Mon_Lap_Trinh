@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h2> n số nguyên tố đầu tiên</h2>
+<body>
+    <script>
+        function checkPrime(n) {
+            if (n < 2){
+                return false;
+            }
+            else if (n == 2){
+                return true;
+            }
+            else if (n % 2 == 0){
+                return false;
+            }
+            else {
+                for (var i = 3; i < Math.sqrt(n); i+=2)
+                {
+                    if (n % i == 0){
+                        return false;
+                        break;
+                    }
+                }
+            }
+            return true
+        }
+        var n = prompt("Nhập số lượng số nguyên tố bạn muốn in ra");
+        var count = 0;
+        var number = 2;
+        // số chẵn ko phải là số nguyên tố nên bước nhảy + 2 để check
+        var res = "";
+        while ( count < n) {
+            if (checkPrime(number)) {
+                count +=1;
+                res = res + number + "<tr> <tr>"
+            }
+            number+=1;
+        }
+
+        document.write(res);
+    </script>
+</body>
+</html>

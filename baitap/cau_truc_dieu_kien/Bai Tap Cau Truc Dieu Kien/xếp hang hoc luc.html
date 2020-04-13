@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> Nhập vào điểm đầu kỳ giữa kỳ và cuối kỳ</h2>
+<input type="number" placeholder="Nhâp điểm đầu kỳ  " id="Dauky">
+<button type="button" onclick="getInputValue()"; > đầu kỳ </button>
+<br><br>
+<input type="number" placeholder="Nhâp điểm giữa kỳ  " id="GiuaKy">
+<button type="button" onclick="getInputValue()"; > giữa kỳ </button>
+<br><br>
+<input type="number" placeholder="Nhâp điểm cuối kỳ  " id="CuoiKy">
+<button type="button" onclick="getInputValue()"; > cuối kỳ </button>
+<br><br>
+<h3> Kết quả điểm trung bình là: </h3>
+
+<button type="button" onclick="trungbinh()"; > Click to see</button>
+<!--<button onclick="goBack()">Go Back</button>-->
+<script>
+    var Diem1 = document.getElementById("Dauky");
+    var Diem2 = document.getElementById("GiuaKy");
+    var Diem3 = document.getElementById("CuoiKy");
+
+    function goBack() {
+        location.reload();
+    }
+
+    function getInputValue() {
+        Diem1 = parseInt(Diem1.value);
+        Diem2 = parseInt(Diem2.value);
+        Diem3 = parseInt(Diem3.value);
+        if (!isNaN(Diem1)||!isNaN(Diem2)||!isNaN(Diem3)) {
+            document.write("Nhập thành công + <button onclick=\"goBack()\">Go Back</button>")
+        } else {
+            document.write("Input fail + <button onclick=\"goBack()\">Go Back</button>")
+        }
+    }
+
+    function trungbinh() {
+        Diem1 = parseInt(Diem1.value);
+        Diem2 = parseInt(Diem2.value);
+        Diem3 = parseInt(Diem3.value);
+        var trungbinh = (Diem1*2 + Diem2*2 + Diem3*3) / 7;
+        // document.write(Diem1)
+        // document.write(Diem2)
+        // document.write(Diem3)
+        // document.write("Day la diem trung binh " + trungbinh)
+        console.log(trungbinh)
+        if (trungbinh<5){
+            document.write("Học sinh trung bình")
+        } else if (trungbinh>=5 && trungbinh<8){
+            document.write("Học sinh khá")
+        } else if (trungbinh>8 && trungbinh<=10){
+            document.write("Học sinh giỏi rồi đấy")
+        } else  if(trungbinh<=0 || trungbinh>10){
+            document.write("toang rồi bạn ơi")
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

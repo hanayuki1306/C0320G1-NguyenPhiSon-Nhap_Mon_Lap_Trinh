@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> Tính số hoa hồng nhận được tùy theo mức doanh số bán hàng</h3>
+<!-- Nếu doanh số bán hàng trên 500 sản phẩm thì hoa hồng nhận thêmsẽ là 10%, 300 sản phẩm sẽ là 7% -->
+<!--Giá của mỗi sản phẩm là 20000 vnd-->
+<script>
+    let a = prompt("nhập vào số sản phẩm bán được")
+    a = parseInt(a)
+    var res
+    if (a>500) {
+        res = a*20000*10/100
+        alert("Mức hoa hồng nhận được là 10% và số tiền nhận được là: " + res)
+    } else if (a>300) {
+        res = a*20000*20/100
+        alert("Mức hoa hồng nhận được là 7% và số tiền nhận được là: " + res)
+    } else {
+        alert("Hãy cố gắng tăng doanh thu trên 300 để nhận thêm tiền hoa hồng")
+    }
+
+</script>
+
+</body>
+</html>
