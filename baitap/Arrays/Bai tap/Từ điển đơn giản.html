@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Simple dictionary</h2>
+    <input type="text" placeholder="input key" id="inputkey" >
+    <button type="button", onclick="translatevnd() "id="output"> Translate to vietnamese</button>
+    <script>
+        var a = ["banana","apple","mango",'strawberry',"hello", "goodbye"]
+        var b = ["chuối", "táo","xoài","nho","xin chao", "tambiet"]
+
+        function translatevnd(truyenvao) {
+            for (i = 0; i < a.length; i++) {
+                let truyenvao = document.getElementById("inputkey")
+                if (truyenvao.value == a[i]) {
+                    let j = i;
+                    // document.write(b[j])
+                    console.log("b[j] " + b[j])
+                    return alert("Nghĩa của " + a[j] + " là: " + b[j])
+                }
+            }    alert("không tìm thấy")
+        }
+
+
+
+    </script>
+</body>
+</html>

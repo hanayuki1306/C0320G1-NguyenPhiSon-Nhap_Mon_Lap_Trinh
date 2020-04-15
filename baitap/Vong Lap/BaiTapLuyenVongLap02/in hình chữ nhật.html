@@ -9,19 +9,22 @@
 <h2 id="result"></h2>
 <script>
     let res = document.getElementById("result").value;
-    function printout(w,h) {
+    // b = chieu dai
+    //a = chieu rong
+    function printout(a,b) {
         let result = '';
         let res = document.getElementById("result");
         //
-        for (let i = 0; i<=h; i++) {
-            for ( let j = 0; j<=w; j++) {
-                if ( i == 0 || i == h ) {
+        for (let i = 0; i<=b; i++) {
+            for ( let j = 0; j<=a; j++) {
+                if ( i == 0 || i == b ) {
                     result += '*';
                 } else {
-                    if ( j == 0 || j == w) {
+                    if ( j == 0 || j == a) {
                         result += '*';
                     } else {
-                        result += '     ';
+                        result += '&nbsp&nbsp';
+                        // result += "&nbsp";
                     }
                 }
 
@@ -34,3 +37,6 @@
 </script>
 </body>
 </html>
+
+
+<!--non breaking space-->
