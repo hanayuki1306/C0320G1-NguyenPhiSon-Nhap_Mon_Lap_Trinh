@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập mảng 01</title>
+</head>
+
+<body>
+<input type="text" id="txtValue">
+<input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();">
+<input type="button" id="btnDisplay" value="Display" onclick="display_array();">
+<br></br>
+<input type="text" id="vIsInArrays"> <button onclick="vIsInArrays()">V có nằm trong array ?</button>
+<br>
+<input type="text" id="vIsInArrays1"> <button onclick="deleteV()">Delete V trong array ?</button>
+
+
+<div id="res0"></div>
+<div id="res1"></div>
+<div id="res2"></div>
+<div id="res3"></div>
+<div id="res4"></div>
+<div id="res5"></div>
+<div id="res6"></div>
+<div id="res7"></div>
+<div id="res8"></div>
+<script>
+    let x = 0;
+    let array = Array();
+    // thêm 1 phần tử vào mảng
+    function add_element_to_array() {
+        if (document.getElementById("txtValue").value !== '' && isNaN(document.getElementById("txtValue").value) ==
+            false) {
+            array[x] = parseFloat(document.getElementById("txtValue").value);
+            x++;
+        } else {
+            document.getElementById("txtValue").value = "";
+        }
+    }
+
+
+
+    function display_array() {
+        let e = "<hr/>";
+        let a1 = "<b>1.Number > 10 :</b>";
+        let a2 = "<b>5.Number is interger and < 0 :</b>";
+        let sum = 0;
+        let avg = 0;
+        for (let i = 0; i < array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br/>";
+            if (array[i] >= 10) {
+                a1 += `${array[i]} ; `;
+            }
+            if (array[i] < 0 && Number.isInteger(array[i])) {
+                a2 += `${array[i]} ; `;
+            }
+            sum += array[i];
+        }
+        avg = sum/array.length;
+
+        document.getElementById("res0").innerHTML = e;
+        document.getElementById("res1").innerHTML = a1;
+        // max value and index of max
+        document.getElementById("res2").innerHTML =
+            `<b>2. Max value in array is: </b>${Math.max(...array)}<b>,
+                 and index of max value is </b>${array.indexOf((Math.max(...array)))}`;
+
+        // sum
+        document.getElementById("res3").innerHTML = `<b>3.sum = </b>${sum} <b>, avg = </b>${avg}`;
+        //reverse arrays
+
+        document.getElementById("res4").innerHTML = `<b>4.revese array: </b>[${array.reverse()}]`;
+        document.getElementById("res5").innerHTML = a2
+        // vIsInArrays()
+        sortUptoDown()
+    }
+
+
+
+    let V = document.getElementById("vIsInArrays")
+
+    function vIsInArrays() {
+        for( i=0;i<array.length;i++){
+            if (array[i] == V.value){
+                document.getElementById("res6").innerHTML = `<b> 6. V is in array:' </b>`
+                break
+                // console.log(V)
+            } else {
+                document.getElementById("res6").innerHTML = `<b> 6. V is not in array:' </b>`
+
+            }
+        }
+    }
+
+    let V1 = document.getElementById("vIsInArrays1")
+    function deleteV() {
+        for (i = 0; i < array.length; i++) {
+            if (array[i] == V1.value) {
+                array.splice(i, 1)
+                document.getElementById("res7").innerHTML = `<b> 7.V is in array and V is deleted: </b>` +  `<br>+ array now is: [${array}]`
+                break
+            } else {
+                document.getElementById("res7").innerHTML = `<b> 7. V is not in array:' </b>`
+
+            }
+        }
+    }
+
+
+    function sortUptoDown() {
+        for (let i=0; i<array.length;i++){
+            let j = (i + 1)
+            let temp = 0
+            for (j;j<array.length;j ++){
+                if (array[i]<array[j]){
+                    temp = array[j]
+                    array[j] = array[i]
+                    array[i] = temp
+                }
+
+            // let temp = 0
+            // let Max = array[0]
+            // if (Max < array[i]){
+            //     temp = Max
+            //     Max = array[i]
+            //     array[i] = temp
+            }
+        }
+        document.getElementById("res8").innerHTML = `<b> 8. array is sorted: ` + ` [${array}]`
+    }
+
+
+</script>
+</body>
+
+</html>
