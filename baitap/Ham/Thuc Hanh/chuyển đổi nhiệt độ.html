@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>
+        <label>Fahrenheit</label>
+        <input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+               oninput="temperatureConverter(this.value)"
+               onchange="temperatureConverter(this.value)">
+        <br>
+        <input id="input1" type="number" oninput="whatIsThis(this.value)" onchange=whatIsThis(this.value)  placeholder="this.value ">
+<!--        <button onclick="whatIsThis()" type="button"> what is this </button>-->
+
+    </p>
+    <p>Celsius: <span id="outputCelsius"></span></p>
+    <div id="res1"> </div>
+</form>
+
+<script>
+
+    function temperatureConverter(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputCelsius").innerHTML = (valNum-32) / 1.8;
+    }
+
+
+    //this.value thì mình phải truyền tham số vào function rồi lấy tham số đó cho đầu ra là được
+    function whatIsThis(abc) {
+
+        document.getElementById("res1").innerHTML = abc
+        // oninput
+    }
+
+
+    // Em ần giảng lại về heap và stack, và khi sử dụng "this". thì
+    // ví dụ :
+
+
+
+</script>
+<!--<input type = "number" placeholder=" number" oninput="what_is_This(this.value)"-->
+<!--       onchange="whatIsThis(this.abc)">-->
+<!--<div id="result"></div>-->
+<!--<script>-->
+<!--    function what_is_This(number) {-->
+<!--        document.getElementById("result").innerHTML = result-->
+<!--    }-->
+<!--</script>-->
+<!--Thì có phải this.value lấy giá trị tại vùng input lưu vào một heap và khi dùng number thì number cũng trở tới vùng mà this.value tạo ra không ạ-->
+
+</body>
+</html>

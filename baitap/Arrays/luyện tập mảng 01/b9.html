@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b </p>
+<p>Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.</p>.
+<p>Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c</p>
+
+<input type="text" id="mang1"> <button type="button" onclick="add_an_element_to_a()"> add_element</button>
+<br>
+<input type="text" id="mang2"> <button type="button" onclick="add_an_element_to_b()" >add_element</button>
+<br>
+<button type="button" onclick="display_res()">Display C</button>
+<br>
+<div id="res0"></div>
+<div id="res1"></div>
+<script>
+    let x = 0;
+    let y = 0
+    let array = Array();
+    let array_b = Array()
+
+
+    // thêm 1 phần tử vào mảng
+    function add_an_element_to_a() {
+        if (document.getElementById("mang1").value !== '' && isNaN(document.getElementById("mang1").value) ==
+            false) {
+            array[x] = parseFloat(document.getElementById("mang1").value);
+            x++;
+        } else {
+            document.getElementById("mang1").value = "";
+        }
+    }
+    function add_an_element_to_b() {
+        if (document.getElementById("mang2").value !== "" && isNaN(document.getElementById("mang2").value) ==
+            false) {
+            array_b[y] = parseFloat(document.getElementById("mang2").value)
+            y++
+        } else {
+            document.getElementById("mang2").value = "";
+        }
+    }
+    function display_res() {
+        let array_c = array.concat(array_b)
+        document.getElementById("res0").innerHTML = `Mang a : [${array}] <br> Mang b : [${array_b}]`
+
+        document.getElementById("res1").innerText = `Mang c : [${array_c}]`
+        }
+
+</script>
+</body>
+</html>
