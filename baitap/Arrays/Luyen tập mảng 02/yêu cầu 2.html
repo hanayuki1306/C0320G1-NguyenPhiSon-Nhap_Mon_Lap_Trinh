@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In các ký tự trong mảng đảo ngược</title>
+</head>
+<body>
+<!--<input type="text" id="mang"> <button type="button" onclick="add_an_element_to_a()"> add_element</button>-->
+<!--<button type="button" onclick="display_res()">Display</button>-->
+<!--    <div id="res0"></div>-->
+<!--    <div id="res1"></div>-->
+
+<!--    <script>-->
+<!--        let x = 0;-->
+<!--        let array = Array();-->
+<!--        let res-->
+<!--        function add_an_element_to_a() {-->
+<!--            if (document.getElementById("mang").value !== '') {-->
+<!--                array[x] = document.getElementById("mang").value;-->
+<!--                x++;-->
+<!--            } else {-->
+<!--                document.getElementById("mang").value = "";-->
+<!--            }-->
+<!--        }-->
+<!--        function display_res() {-->
+<!--            let res = ""-->
+<!--            let a = array.reverse()-->
+<!--            console.log(a)-->
+<!--            // a = a.toString()-->
+<!--            for(let i in a) {-->
+<!--                res += a[i]-->
+<!--                document.getElementById("res0").innerHTML = res-->
+<!--            }-->
+<!--        }-->
+<!--    </script>-->
+<script>
+    function check(array,char) {
+        let cout = 0
+        for (i=0;i<array.length;i++){
+            if (char === array[i]){
+                cout++
+            }
+        } if (cout= 0){
+            return (-1)
+        }else{
+            return cout;
+        }
+    }
+    let a = [2,3,5,"2","a",4]
+
+    document.write((check(a, "2")))
+
+</script>
+</body>
+</html>

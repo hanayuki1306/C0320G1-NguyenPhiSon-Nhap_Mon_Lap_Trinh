@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+
+    <div id = "res0"></div>
+    <div id = "res1"></div>
+    <div id = "res2"></div>
+    <div id = "res3"></div>
+    <canvas id="hinhcn" width="200" height="200" style="border: aqua 1px"></canvas>
+    <script>
+       class HinhChuNhat {
+           constructor(dai, rong) {
+               this.dai = dai
+               this.rong = rong
+           }
+           LayChieuDai = function(){
+               return this.dai
+           }
+           LayChieuRong = function () {
+                return this.rong
+           }
+           Dientich = function () {
+               return this.dai * this.rong
+           }
+           ChuVi = function () {
+               return (this.dai + this.rong)*2
+           }
+           set_ChieuDai = function (number) {
+               this.dai = number
+           }
+           set_ChieuRong = function (number) {
+               this.rong = number
+
+           }
+       }
+       let HinhCN1 = new HinhChuNhat(10,10)
+       let a = HinhCN1.LayChieuDai()
+       let b = HinhCN1.LayChieuRong()
+       let c = HinhCN1.Dientich()
+       document.getElementById("res0").innerHTML = `Dien tich hinh chu nhat co chieu dai ${a}  va chieu rong ${b} la: ${c}`
+       var d = HinhCN1.ChuVi()
+       document.getElementById("res1").innerHTML = `Co chu vi la: ${d}`
+       let set_dai = HinhCN1.set_ChieuDai(60)
+       let set_rong = HinhCN1.set_ChieuRong(30)
+       let Res = HinhCN1.Dientich()
+        document.getElementById("res2").innerHTML = `Diện tích hình chữ nhật sau thay đổi là : ${Res}`
+
+        let VeHCN = document.getElementById("hinhcn")
+        let ctx = VeHCN.getContext("2d")
+        ctx.fillStyle = "red"
+        ctx.fillRect(15,15,60,30)
+
+    </script>
+</body>
+</html>

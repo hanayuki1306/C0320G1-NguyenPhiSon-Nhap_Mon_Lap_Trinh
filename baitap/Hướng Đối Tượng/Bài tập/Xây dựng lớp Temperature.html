@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <titl>Temperature</titl></title>
+</head>
+<body>
+<div id = "res0"></div>
+<div id = "res1"></div>
+<div id = "res2"></div>
+<div id = "res3"></div>
+<!--F=(9*C)/5+32-->
+    <script>
+        class Temperature {
+            constructor(temperatureC) {
+                this.temperatureC = temperatureC
+            }
+
+            LayC = function() {
+                return this.temperatureC
+            }
+
+            CtoF = function () {
+                // console.log(this.temperatureC)
+                let F = (9*this.temperatureC)/5 + 32
+                console.log(F)
+                return F
+            }
+
+            CtoK = function () {
+                let K = this.temperatureC + 273.15
+                return K
+            }
+        }
+        var tes1 = new Temperature(25)
+        var CtoF = tes1.CtoF()
+        let C = tes1.LayC()
+        let CtoK = tes1.CtoK()
+        document.getElementById("res0").innerHTML = C
+        document.getElementById("res1").innerHTML  = `${C} to F: ${CtoF}`
+        document.getElementById("res2").innerHTML  = `${C} to K: ${CtoK}`
+
+    </script>
+
+</body>
+</html>

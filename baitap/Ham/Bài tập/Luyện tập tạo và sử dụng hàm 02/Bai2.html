@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
+<body>
+<div id="res0"></div>
+<br>
+<div id="res1"></div>
+    <script>
+        function dientich_hinhtron() {
+            let r = parseFloat(prompt("Nhap vao r de tinh dien tich"))
+            return document.getElementById("res0").innerHTML = r*r*3.14
+        }
+        function chuvi_hinhtron() {
+            let r = parseFloat(prompt("Nhap vao r de tinh chu vi"))
+            return document.getElementById("res1").innerHTML = 2*r*3.14
+        }
+
+        dientich_hinhtron()
+        chuvi_hinhtron()
+
+
+
+    </script>
+</body>
+</html>

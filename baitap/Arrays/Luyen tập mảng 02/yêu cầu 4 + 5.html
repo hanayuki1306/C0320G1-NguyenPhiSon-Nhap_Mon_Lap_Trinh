@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="res"></div>
+<div id="res1"></div>
+<div id="res2"></div>
+    <script>
+        function display_res() {
+            var a = prompt("Nhập vào chuỗi a")
+            var b = prompt("Nhập vào chuỗi b")
+            document.getElementById("res").innerHTML = `Chuỗi a có ${a.length} ký tự`
+
+            if (a === b) {
+                document.getElementById("res1").innerHTML = "2 chuỗi nhập vào giống nhau"
+            } else {
+                document.getElementById("res2").innerHTML = "2 chuỗi nhập vào khác nhau"
+            }
+        }
+        display_res()
+    </script>
+
+</body>
+</html>

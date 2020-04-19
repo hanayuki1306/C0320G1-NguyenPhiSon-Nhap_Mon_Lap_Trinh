@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, -->
+<!--hiển thị hộp thoại thông báo cho người dùng. -->
+<!--Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.-->
+<body>
+    <script>
+        var a = parseFloat(prompt("nhập vào tham số a"))
+        var b = parseFloat(prompt("nhập vào tham số b"))
+        function print_res() {
+            if (a > b){
+                console.log(a)
+                return alert(`${a} > ${b}`)
+            } else if (a<= b){
+                let sum = a+ b
+                return alert("Do a <= b nên  ta có tổng a và b là " + sum )
+            }
+        }
+        print_res()
+    </script>
+
+</body>
+</html>

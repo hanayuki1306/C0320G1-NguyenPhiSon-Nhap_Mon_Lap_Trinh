@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Tạo hàm nhận vào một đối số dạng số,-->
+<!--tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.-->
+<!--Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.-->
+<body>
+    <div id="res"></div>
+    <script>
+
+        var a = parseFloat(prompt("nhập vào 1 đối số"))
+
+        function print_res() {
+            a +=1
+            document.getElementById("res").innerHTML = "giá trị tăng lên của đối số a là " + a
+        }
+        print_res()
+    </script>
+</body>
+</html>

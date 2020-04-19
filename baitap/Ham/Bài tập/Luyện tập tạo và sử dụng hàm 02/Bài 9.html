@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,-->
+<!--kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.-->
+<!--Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.-->
+<body>
+<div id="res"></div>
+<div id="res1"></div>
+
+<script>
+    function kiemtra() {
+
+        let nhapmang =  prompt("Nhập các ký tự của mảng cách nhau bởi dấu phấy")
+        nhapkytu = prompt("nhập vào 1 ký tự bất kỳ")
+
+        var count = 0
+        res = ""
+
+        var mang = nhapmang.split(",")
+
+        console.log("mảng: " + mang)
+        for (let i=0; i < mang.length;i++){
+            if (nhapkytu == mang[i]){
+                count += 1
+            }
+            res = count
+        }
+        if (res == 0 ){
+            document.getElementById("res1").innerHTML = `Ký tự ${nhapkytu} không có trong mảng`
+        } else {
+            document.getElementById("res").innerHTML = `Ký tự ${nhapkytu} xuất hiện ${res} lần trong mảng đã nhập`
+        }
+    }
+    kiemtra()
+</script>
+</body>
+</html>

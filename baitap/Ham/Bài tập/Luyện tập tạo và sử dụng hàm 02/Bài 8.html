@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--// : Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó-->
+<body>
+<div id ="res">
+</div>
+
+<!-- [1,2,3,4,5]-->
+    <script>
+        // function swapArr(arr) {
+        //     return document.write(arr.reverse())
+        // }
+        // let a = [1,2,3,4,"haha"]
+        // swapArr(a)
+
+        function swap_arr(arr) {
+
+            let first = 0;
+            let last = arr.length - 1;
+            while (first < last) {
+                let temp = arr[first];
+                arr[first] = arr[last];
+                arr[last] = temp;
+                first++;
+                last--;
+            }
+            document.write(arr);
+        }
+        let a = [1,2,3,4,"haha"]
+
+        swap_arr(a)
+    </script>
+</body>
+</html>

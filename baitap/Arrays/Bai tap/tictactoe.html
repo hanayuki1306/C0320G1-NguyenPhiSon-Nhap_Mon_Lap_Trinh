@@ -8,57 +8,104 @@
 <p id="carogame" />
 <input type="button" value="Change Value X" onclick="changeValueX()">
 <input type="button" value="Change Value O" onclick="changeValueO()">
-
+<br>
+<!--<button onclick="checkwin()">check win</button>-->
+<!--<div id="check"></div>-->
 <script>
     let b = document.getElementById("carogame");
 
     let board = [];
     let data = "";
-    for (let i = 0; i < 5; i++) {
-        board[i] = new Array(".", ".", ".", ".", ".");
+    for (let i = 0; i < 10; i++) {
+        board[i] = new Array(".", ".", ".", ".", ".",".", ".", ".", ".", ".");
     }
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 10; i++) {
         data += "<br/>";
-        for (let j = 0; j < 5; j++) {
+        for (let j = 0; j < 10; j++) {
             data += board[i][j] + "&nbsp;&nbsp;";
         }
     }
+    // b.innerHTML = data
 
     data += "<br/><br/><input type='button' value='Change Value X' onclick='changeValueX()'>"
     // data += "<br/><br/><input type='button' value='Change Value O' onclick='changeValueO()'>"
     b.innerHTML = data;
 
     function changeValueX() {
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
+        let positionX
+        let positionY
+        do { positionX = prompt("nhập  X: ");
+            positionY = prompt("nhập  Y: ");
+        } while (
+            board[positionX][positionY] == "x" || board[positionX][positionY] == "O"
+            )
+
+
         data = "";
-        board[positionX][positionY] = "x";
-        for (let i = 0; i < 5; i++) {
+        board[positionX][positionY] = "X";
+        for (let i = 0; i < 10; i++) {
             data += "<br/>";
-            for (let j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            for (let j = 0; j < 10; j++) {
+                console.log(board[i][j])
+                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
             }
         }
+
         data += "<br/><br/><input type='button' value='Change Value O ' onclick='changeValueO()'>"
         b.innerHTML = "<hr/>" + data;
+        checkwin()
+
     }
     function changeValueO() {
-        let positionX = prompt("X: ");
-        let positionY = prompt("Y: ");
-        data = "";
-        board[positionX][positionY] = "O";
-        for (let i = 0; i < 5; i++) {
+        let positionX
+        let positionY
+
+        do { positionX = prompt("nhập  X: ");
+            positionY = prompt("nhập  Y: ");
+        } while (
+            board[positionX][positionY] == "x" || board[positionX][positionY] == "O"
+            )
+
+        console.log(board)
+        data=""
+        // board[positionX][positionY] == "O"
+
+
+        for (let i = 0; i < 10; i++) {
             data += "<br/>";
-            for (let j = 0; j < 5; j++) {
-                data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-            }
+            for (let j = 0; j < 10; j++) {
+                    board[positionX][positionY] = "O";
+                    data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+                }
         }
+
         data += "<br/><br/><input type='button' value='Change Value X ' onclick='changeValueX()'>"
         b.innerHTML = "<hr/>" + data;
+        checkwin()
     }
-    function checkwin() {
+    //X doc Y ngang 2/3 3/4
 
+    function checkwin() {
+        for (let i = 0; i < 10; i++) {
+            data += "<br/>";
+                for (let j = 0; j < 10; j++) {
+                    // if ((board[i][j]) == "X") && board[i+1][j+1] == "X" &&board[i+2][j+2] =="X")
+                    if (
+                          board[i][j] == "X" && board[i+1][j] == "X" && board[i+2][j]== "X"
+                        ||board[i][j] == "O" && board[i+1][j] == "O" && board[i+2][j]== "O"
+                        ||board[i][j] == "X" && board[i+1][j+1] == "X" && board[i+2][j+2] =="X"
+                        ||board[i][j] == "O" && board[i+1][j+1] == "O" && board[i+2][j+2] =="O"
+                        ||board[i][j] == "X" && board[i-1][j+1] == "X" && board[i-2][j+2] == "X"
+                        ||board[i][j] == "O" && board[i-1][j+1] == "O" && board[i-2][j+2] == "O"
+                        ||board[i][j] == "X" && board[i][j+1] == "X" && board[i][j+2]== "X"
+                        ||board[i][j] == "O" && board[i][j+1] == "O" && board[i][j+2]== "O"
+                    )
+                         {
+                    alert("game end")
+                }
+            }
+        }
     }
 
 

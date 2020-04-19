@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="mang"> <button type="button" onclick="add_an_element_to_a()"> add_element</button>
+<button type="button" onclick="display_res()">Display</button>
+<div id="res0"></div>
+<div id="res1"></div>
+
+<script>
+    let x = 0;
+    let array = Array();
+    let res
+    function add_an_element_to_a() {
+        if (document.getElementById("mang").value !== '' && isNaN(document.getElementById("mang").value) ==
+            false) {
+            array[x] = parseFloat(document.getElementById("mang").value);
+            x++;
+        } else {
+            document.getElementById("mang").value = "";
+        }
+    }
+    function display_res() {
+        let a = "<b> Kích thước của mảng </b>"
+        document.getElementById("res1").innerHTML = a + array.length
+        }
+</script>
+</body>
+</html>
