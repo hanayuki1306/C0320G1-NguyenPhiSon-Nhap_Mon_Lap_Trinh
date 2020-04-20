@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class mobile</title>
+</head>
+<body>
+<div id = "res0"></div>
+<div id = "res1"></div>
+<div id = "res2"></div>
+<div id = "res3"></div>
+<script>
+    class Mobile {
+        constructor(name,editor, save, send ){
+            this.name = name
+            this.editor = editor
+            this.save = save
+            this.send = send
+        }
+        turnOn = function() {
+            return true
+        }
+        turnOff = function () {
+            return false
+        }
+        // value có turnon hoặc turn off truyền vào thì trả về giá trị // không thì sẽ check
+        checkOnOff = function (value) {
+            if (value == true){
+                console.log("phone is On")
+                return document.getElementById("res0").innerHTML = "phone is On"
+            } else {
+                console.log("phone still Off")
+                return document.getElementById("res0").innerHTML = "phone is Off"
+            }
+        }
+        Editor_mess = function (value) {
+            if (value == undefined){
+                console.log("have no editor here")
+            } else {
+                return value
+            }
+        }
+
+    }
+    let Iphone = new Mobile("Dienthoai1")
+    // alert(Iphone.name)
+    // let turnOff = Iphone.turnOff()
+    let check = Iphone.checkOnOff(Iphone.turnOn())
+    alert(check)
+    // Iphone.editor = "what is this"
+    console.log(Iphone.Editor_mess())
+</script>
+</body>
+</html>
