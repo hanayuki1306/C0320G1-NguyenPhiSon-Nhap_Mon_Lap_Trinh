@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bật tắt bóng đèn</title>
+</head>
+<body>
+<h3> Bài toán bật tắt bóng đèn</h3>
+<img src="" id="lamp">
+<br>
+<button id="switch" > TurnOn/TurnOff</button>
+
+<script>
+    class SwitchButton {
+        constructor(status) {
+            this.status = status
+        }
+        getStatus() {
+            return this.status
+        }
+        setStatus(newStatus) {
+            this.status = newStatus;
+        }
+        turnOn turnOf() {
+            this.status = !this.status;
+        }
+    }
+</script>
+
+</body>
+</html>

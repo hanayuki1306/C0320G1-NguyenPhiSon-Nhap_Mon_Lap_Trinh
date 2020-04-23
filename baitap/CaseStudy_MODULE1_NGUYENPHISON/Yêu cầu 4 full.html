@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task1 </title>
+</head>
+<!--1.	Tạo menu gồm có tính năng Add Name Customer và Delete Customer-->
+<!-- -	Khi người dùng chọn chức năng Add Name Customer thì chương trình hiển thị yêu cầu người dùng nhập số lượng customer muốn thêm.-->
+<!--Sau đó sẽ tiến hành cho phép người dùng nhập các thông tin của Customer vào mảng có tên arrNameCustomers-->
+<body>
+    <script>
+        var arrNameCustomers = ["Nguyen Van Hoai", "Nguyen THanh Nam"]
+        while(true) {
+
+
+            var thongbao = prompt(`1. Add Name Customer\n2. Delete Customer`)
+
+            function info_customer() {
+                switch (thongbao) {
+                    case "1":
+                        let array_res = ""
+                        let add_number_of_Customer = parseInt(prompt("How many Customers you want add:"))
+                        let i = 0
+                        while (i < add_number_of_Customer) {
+                            name_customer = prompt("Input name of Customers you want add:")
+                            arrNameCustomers.push(name_customer)
+                            i++
+                        }
+                        arrNameCustomers.sort()
+
+                        for (let j=0;j<arrNameCustomers.length;j++){
+
+                            array_res += (j+1) + ". " + arrNameCustomers[j] + "\n"
+                        }
+
+                        alert(array_res)
+                        // arrNameCustomers.sort()
+                        // alert("List Customer now:" + arrNameCustomers)
+                        console.log(arrNameCustomers)
+                        break
+
+                    case "2":
+                        let after_delete = ""
+                        console.log("customer dang co:" + arrNameCustomers)
+                        alert("This is list of customer now, pls check your name want delete:\n"+ arrNameCustomers)
+                        delete_name = prompt("Input name of Customer you want Delete")
+                        let res
+                        for (let i = 0; i < arrNameCustomers.length; i++) {
+                            if (arrNameCustomers[i] == delete_name) {
+                                res = arrNameCustomers.splice(i, 1)
+                            }
+                        }
+                        arrNameCustomers.sort()
+
+
+                        for (let j=0;j<arrNameCustomers.length;j++){
+
+                            after_delete += (j+1) + ". " + arrNameCustomers[j] + "\n"
+                        }
+                        alert(after_delete)
+
+                        if (arrNameCustomers == res) {
+                            alert("Không có customer đã nhập")
+                        }
+                        console.log(arrNameCustomers)
+                        break
+
+                    default:
+                        alert("pls choice 1 or 2")
+                }
+            }
+
+            console.log(".............." + arrNameCustomers)
+            info_customer()
+        }
+    </script>
+</body>
+</html>

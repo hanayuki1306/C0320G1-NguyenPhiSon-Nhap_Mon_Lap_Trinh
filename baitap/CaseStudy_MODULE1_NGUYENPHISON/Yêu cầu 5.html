@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yêu cầu 5</title>
+</head>
+<body>
+<script>
+
+    var arrListCustomers = ["tes1111111111","test22222222","tes3333"]
+    var detail_info = []
+    var infomation_of_1_customer = ["Name","Age","Hobby"]
+
+
+
+    function displayMainMenu() {
+        let menu = prompt(`Input number to choice:\n1. Add New Customer\n2. Display Information Customer\n3. Edit Information Customer\n4. Delete Customer\n 5. Exit`)
+        switch(menu){
+            case "1":
+                addNewCustomer()
+                break
+            case "2":
+                displayCustomers()
+                break
+            case "3":
+                editCustomer()
+            case "4":
+                deleteCustomer()
+                break
+            case "5":
+                check_yes_no()
+                break
+            default:
+                alert("pls input from 1-5")
+        }
+    }
+
+    function check_yes_no() {
+        a= parseInt(prompt(`Are you sure\n1. Yes\n2. No`))
+        if (a == 1){
+            alert("See You Later")
+        } else {
+            alert("back to menu")
+            displayMainMenu()
+        }
+    }
+
+    function addNewCustomer() {
+        let res_add = ""
+        let add_number_of_Customer = parseInt(prompt("How many Customers you want add:"))
+        let i = 0
+        while (i < add_number_of_Customer) {
+            name_customer = prompt("Input name of Customers you want add:")
+            arrListCustomers.push(name_customer)
+            i++
+        }
+        arrListCustomers.sort()
+
+        for (let j=0;j<arrListCustomers.length;j++){
+
+            res_add += (j+1) + ". " + arrListCustomers[j] + "\n"
+        }
+
+        alert(res_add)
+    }
+    function displayCustomers(){
+        alert(`This is List Customer info, input number to show more detail`)
+    }
+    // function editCustomer() {
+    //     let res_edit = ""
+    //     let value_of_Customer = []
+    //     for (let j=0;j<arrListCustomers.length;j++){
+    //
+    //         res_edit += (j+1) + ". " + arrListCustomers[j] + "\n"
+    //     }
+    //     let choice_edit = prompt("Please choice Customer you want edit\n" + res_edit)
+    //     parseInt(choice_edit)
+    //
+    //
+    //     function edit_info(){
+    //         detail_info.push(arrListCustomers[ choice_edit - 1])
+    //
+    //         }
+    //         // alert(detail_info)
+    //     }
+    //     edit_info()
+    //
+    // }
+
+    function deleteCustomer(){
+        let res_now = ""
+
+        for (let j=0;j<arrListCustomers.length;j++){
+
+            res_now += (j+1) + ". " + arrListCustomers[j] + "\n"
+        }
+        let delete_number = prompt("Input Customer you want Delete\n" + res_now)
+        delete_number = parseInt(delete_number)
+        // for (let i = 0; i < arrListCustomers.length; i++) {
+        //     if (arrListCustomers[i] == [delete_number-1]) {
+        //         res_now = arrListCustomers.splice(i, 1)
+        //     }
+        arrListCustomers.splice((delete_number-1),1)
+        // }
+        alert("This Customer now:\n" + arrListCustomers)
+    }
+
+    displayMainMenu()
+
+</script>
+</body>
+</html>

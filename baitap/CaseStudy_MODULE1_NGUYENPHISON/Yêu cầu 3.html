@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc lặp</title>
+</head>
+<body>
+<!--<div id="res0"></div>-->
+<!--<div id="res1"></div>-->
+<!--<div id="res2"></div>-->
+
+<script>
+    function check_email(){
+        let check= false
+        do {
+            let countAt = 0
+            let coutDoc = 0
+            email = prompt("Input Email:");
+            for (let i=0;i<email.length;i++){
+                if (email.charAt(i) === "@"){
+                    countAt++;
+                    for (let j = i+1; j< email.length; j++){
+                        if (email.charAt(j) === "."){
+                            coutDoc++;
+                        }
+                    }
+                }
+            }
+            if(countAt!=1||coutDoc<1){
+                alert("wrong pls input again")
+            } else  {
+                check = true
+            }
+        } while (!check)
+    }
+    // check_email()
+    function checkCMND() {
+        let check = false
+        do {
+            cmnd = prompt("input cmnd")
+            if (!isNaN(cmnd)) {
+                cmnd = Number.parseFloat(cmnd)
+            }
+            if (!Number.isInteger(cmnd)) {
+                alert("CMND không phải là số nguyên")
+                continue
+            }
+            if (cmnd < 10000000 || cmnd > 99999999) {
+                alert("không đúng định dạng")
+                continue
+            }
+            check = true
+        } while (!check)
+    }
+    // checkCMND()
+    
+    // xy/
+    function check_ngay_sinh() {
+        let check = false
+        do {
+            birthday_date = prompt(" pls input birthday ")
+
+            if (birthday_date.charAt(2) === "/" && birthday_date.charAt(5)==="/"){
+                console.log("đã join 1")
+                let day = birthday_date.substring(0,2)
+                // console.log(typeof(day))
+                let month = birthday_date.substring(3,5)
+                // console.log(typeof(month))
+                let year = birthday_date.substring(6,10)
+                // console.log(typeof(year))
+                if(!isNaN(day)&&!isNaN(month)&&!isNaN(year)){
+                    day = Number.parseFloat(day)
+                    // console.log(typeof(day))
+                    console.log("đã join 2")
+                    month = Number.parseFloat(month)
+                    year = Number.parseFloat(year)
+
+                    if(Number.isInteger(day) && Number.isInteger(month)&&Number.isInteger(year)) {
+                        console.log("join success")
+                        console.log(day)
+                        console.log(month)
+                        console.log(year)
+                        if (day<32 && month<=12&& year>1000){
+                            check = true
+                        }
+                    }
+                }
+            }
+            console.log(!check)
+            if (!check){
+                alert("ngày sinh không đúng định dạng")
+            }
+        } while (!check)
+    }
+    // check_ngay_sinh()
+
+    // function check_ngaysinh_1() {
+    //         birthday_date = prompt("input birthday")
+    //         let count = 0
+    //         for (let i=0; i<birthday_date.length;i++) {
+    //             if (birthday_date.charAt(i) === "/") {
+    //                 count++
+    //             }
+    //         }
+    //         console.log(count)
+    //
+    //
+    //     // }
+    //
+    // }
+    // check_ngaysinh_1()
+    function check_rentDays() {
+        let check = false
+        do {
+
+            rentDay = prompt("input rentDays")
+            if (!isNaN(rentDay)) {
+                console.log(rentDay)
+                rentDay = Number.parseFloat(rentDay)
+                if (Number.isInteger(rentDay)) {
+                    check = true
+                }
+            } if (!check){
+                alert("rent ko phai la so nguyen duong")
+            }
+        } while (!check)
+    }
+    check_rentDays()
+
+
+
+</script>
+
+
+</body>
+</html>

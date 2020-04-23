@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 2</title>
+</head>
+<body>
+<div id="ress0"></div>
+<script>
+    let nameCustomer = "Nguyễn Phi Sơn";
+    let emailCustomer = "phison130695@gmail.com"
+    let idCard = "123456789"
+    let birthdayCustomer = "11/03/1994"
+    let adressCustomer = "Đà Nẵng"
+    let typeCustomer = "Gold"
+    let discount = 10
+    let numberOfAccompanying = 2
+    let typeRoom = "Business"
+    let rentDays = 10
+    let typeService = "Villa"
+    let moneyPerdays = 0
+    let totalPay
+    // let totalPay = gia_dich_vu*rentDays*(1-discount/100) - giam_gia
+
+    //Số tiền phải trả  = giá loại dịch vụ * số ngày - giảm giá
+    //giá dịch vụ: Villa = 500; house = 300 room = 100; số ngày rentDays, giảm giá discount
+
+    // Số tiền giảm giá = giảm giá theo địa chỉ + giảm giá theo thời gian lưu trú + giảm giá theo loại Customer
+
+
+    var alert_info = alert(`Information Of Customer:\nName: ${nameCustomer}\nIdCard: ${idCard}\nBirthday: ${birthdayCustomer}\n` +
+        `Email: ${emailCustomer}\nAdress: ${adressCustomer}\nType: ${typeCustomer}\nTypeRoom: ${typeRoom}\nDiscount: ${discount}`)
+
+    let message_1 = prompt("1.Show Information Customer \n2.Edit Information Customer \n3.Show the amount to be paid after discount" )
+
+    switch(message_1){
+            case "1":
+                alert(`Information Of Customer:\nName: ${nameCustomer}\nIdCard: ${idCard}\nBirthday: ${birthdayCustomer}\n`+
+                `   Email: ${emailCustomer}\nAdress: ${adressCustomer}\nType: ${typeCustomer}\nTypeRoom: ${typeRoom}\nDiscount: ${discount}`)
+                break
+            case "2":
+                edit_info()
+                break
+            case "3":
+                total_pay()
+                break
+            default:
+                alert("pls input")
+    }
+
+
+    function edit_info(){
+        b = prompt(`Choice infomation of Customer you want edit:\n1.Name: ${nameCustomer}\n2.IdCard: ${idCard}\n3.Birthday: ${birthdayCustomer}\n`
+            +`4.Email: ${emailCustomer}\n5.Adress: ${adressCustomer}\n6.Type: ${typeCustomer}\n7.TypeRoom: ${typeRoom}\n8.Discount: ${discount}`)
+        switch (b) {
+            case "1":
+                let editname = prompt("Enter name you want edit:")
+                console.log(editname)
+                nameCustomer = editname
+                alert_info
+                break
+            case "2":
+                let edit_idcard = prompt("Enter Idcard want edit:")
+                idCard = edit_idcard
+                alert_info
+                break
+            case "3":
+                let edit_birthday = prompt("Enter Birthday want edit:")
+                birthdayCustomer = edit_birthday
+                alert_info
+                break
+            default:
+                alert("You only can change Name, id and birthday only, tks ")
+                break
+        }
+    }
+    // alert(nameCustomer)
+    function total_pay() {
+        let giam_gia = 0
+        switch(adressCustomer){
+            case "Đà Nẵng":
+            giam_gia += 20
+            break
+            case "Huế":
+                giam_gia +=10
+            break
+            case "Quảng Nam":
+                giam_gia += 5
+            break
+            default:
+                giam_gia = giam_gia
+        }
+        console.log("giam gia theo dia diem: "+ giam_gia)
+        if (rentDays >= 7 ){
+            giam_gia += 30
+        } else if (rentDays<7 && rentDays>=5){
+            giam_gia += 20
+        } else if (rentDays>=2 && rentDays<=4){
+            giam_gia +=10
+        } else {
+            giam_gia = giam_gia
+        }
+        console.log("đia_diem + t gian"+ giam_gia)
+        switch (typeCustomer) {
+            case "Diamond":
+                giam_gia += 15
+                break
+            case "Platium ":
+                giam_gia +=10
+                break
+            case "Gold":
+                giam_gia +=5
+                break
+            case  "Silver ":
+                giam_gia +=2
+                break
+
+            default:
+                giam_gia = giam_gia
+        }
+        console.log("giam gia"+ giam_gia )
+
+
+        switch (typeService) {
+            case "Villa":
+                parseInt(discount)
+                totalPay = 500*rentDays*(1-discount/100) - giam_gia
+                alert("TotalPay: "+ totalPay)
+                break
+            case "House":
+                parseInt(discount)
+                totalPay = 300*rentDays*(1-discount/100) - giam_gia
+                alert("TotalPay: "+ totalPay)
+                break
+            case "Room":
+                parseInt(discount)
+                totalPay = 300*rentDays*(1-discount/100) - giam_gia
+                alert("TotalPay: "+ totalPay)
+                break
+
+        }
+    }
+
+
+</script>
+</body>
+</html>
