@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title> Validate email</title>
 </head>
 <body>
-$END$
+    <script>
+        function   Validate_email() {
+            var str = prompt("input to check")
+            pattern = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+            if (pattern.test(str)){
+                return alert(" this is email")
+            } else return  alert("not email")
+        }
+        Validate_email()
+    </script>
 </body>
 </html>
