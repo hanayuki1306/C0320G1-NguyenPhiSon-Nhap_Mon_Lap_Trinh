@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập sử dụng biểu thức chính quy</title>
+</head>
+<body>
+<script>
+    // Kiểm tra chuỗi đưa vào có đúng dạng dd/mm/yyyy
+    function check_validate(str) {
+        regex = /^[A-Za-z0-9]{2,}[/][A-Za-z0-9]{2,}[/][A-Za-z0-9]{0,4}$/
+        return regex.test(str)
+    }
+
+    let case1 = "22/33/2-22"
+    let case2 = "a2/33/addf"
+    let case3 = "a2/33/sdadaddddddđ"
+    let case4 = "slfh7j,a-fm"
+    // alert(check_validate(case1))
+    // alert(check_validate(case2))
+    // alert(check_validate(case3))
+
+    // Đếm số từ trong một chuỗi
+
+    function count_char(str){
+        let count = 0
+        let check = /[A-Za-z]/
+        for (i in str){
+            if (check.test(str[i])){
+                console.log(str[i])
+                count++
+            }
+        }
+        return count
+    }
+    // alert(count_char(case2))
+    // alert(count_char(case4))
+
+    // Đếm số nguyên âm/phụ âm trong một chuỗi
+
+    function count(str){
+        let count = 0
+        let nguyen_am = 0
+        let phu_am = 0
+        check =  /[A-Za-z]/
+        if (check.test(str)){
+            check_nguyen_am = /[aăâeêioôơuưy]/
+            check_phu_am = /[bcdđghklmnpqrstvxf]/
+            for (i in str){
+                if (check_nguyen_am.test(str[i])){
+                    console.log(str[i])
+                    nguyen_am++
+                } else if (check_phu_am.test(str[i])){
+                    console.log(str[i])
+                    phu_am++
+                }
+            }
+        }
+        alert(`Nguyen am: ${nguyen_am}\nPhu Am: ${phu_am}`)
+    }
+
+    let case7 = "7-4asdandanflrgng"
+    // count(case7)
+
+
+// Mã bảo mật hợp lệ:
+//     1: Phải nhiều hơn 8 kí tự và không dấu
+//     2: Không chứa những kí tự đặc biệt
+//     3: Viết hoa chữ cái đầu tiên
+//     4: Có thể có dấu _
+
+
+    // let case 8 = Adkasjafj?ádadd
+    function check_valid_password(){
+        while (true) {
+            let get_input = prompt("pls input password you want")
+            regex = /^[A-Z][a-zA-Z0-9_]{8,20}$/
+            if (regex.test(get_input)) {
+                return alert("your password is ok")
+            } else alert("please input password following request ")
+        }
+    }
+    check_valid_password()
+
+
+
+
+</script>
+</body>
+</html>

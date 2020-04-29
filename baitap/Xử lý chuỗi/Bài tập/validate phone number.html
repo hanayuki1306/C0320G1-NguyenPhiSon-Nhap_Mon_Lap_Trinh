@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phone</title>
+</head>
+<body>
+    <script>
+
+        function validate_phone(phone) {
+            regex = /^[(][0-9]{2}[)]-[0-9]{10}/
+            if (regex.test(phone)){
+                return alert("Yes")
+            } else return alert("No")
+        }
+        let case_1 = "(84)-0978489648"
+        let case_2 = "a8-22222222"
+        let case_3 = "84-0978489648"
+
+        validate_phone(case_1)
+        validate_phone(case_2)
+        validate_phone(case_3)
+    </script>
+</body>
+</html>

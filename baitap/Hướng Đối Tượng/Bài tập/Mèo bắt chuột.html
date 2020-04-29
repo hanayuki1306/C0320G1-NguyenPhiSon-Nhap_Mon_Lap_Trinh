@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat vs Rat</title>
+</head>
+
+<div id = "mouse1"></div>
+<body>
+    <script>
+        class Rat{
+            constructor(name, weight, speed, status) {
+                this.name = name
+                this.weight = weight
+                this.speed = speed
+                this.status = status
+            }
+
+            status_of_mouse(){
+                if (true){
+                    return this.status = true
+                } else {
+                    console.log("mouse is death")
+                    return this.status = false
+                }
+            }
+            sound_of_mouse (){
+                if (this.status_of_mouse()) {
+                    console.log("chit chit")
+                } else {
+                    console.log("sound of silence")
+                }
+            }
+        }
+        class Cat {
+            constructor(name, weight, speed) {
+                this.name = name
+                this.weight = weight
+                this.speed = speed
+            }
+            catch_mouse(name_of_mouse){
+                if (name_of_mouse != null) {
+                    console.log("cat speed:" + this.speed )
+                    console.log("mouse speed:" + name_of_mouse.speed )
+                    if (name_of_mouse.status == false){
+                        return console.log("mouse is death")
+
+                    }
+                    if (this.speed > name_of_mouse.speed) {
+                        console.log("Rat was catched up")
+                        name_of_mouse.status = false
+                        this.weight += name_of_mouse.weight
+                        this.speed -= 5
+                    } else {
+                        console.log(" Rat was escape ")
+                        name_of_mouse.status = true
+                        this.weight = this.weight
+                    }
+                } else {
+                    alert("pls input name of mouse")
+                }
+        }
+                attribute_cat (){
+                    console.log(`This is attribute of Cat:\n${this.name}\nWeight: ${this.weight}\nSpeed: ${this.speed}`)
+            }
+        }
+        let jerry = new Rat("jerry",10, 100, true)
+        let jerry1 = new Rat("jerry1",10, 200, true)
+        let jerry2 = new Rat("jerry1",10, 110, true)
+        let jerry3 = new Rat("jerry1",10, 100, true)
+        let jerry4 = new Rat("jerry1",10, 100, true)
+        let jerry5 = new Rat("jerry1",10, 100, true)
+        let jerry6 = new Rat("jerry1",10, 130, true)
+
+
+
+
+        var name_of_mouse = [jerry,jerry1,jerry2,jerry3,jerry4,jerry5,jerry6]
+
+        function game_start() {
+                for (let i=0; i<name_of_mouse.length; i++) {
+                    tom.catch_mouse(name_of_mouse[i])
+                    tom.attribute_cat()
+                }
+                for (let i=0; i<name_of_mouse.length; i++) {
+                    name_of_mouse.status
+                }
+        }
+
+        function status_mouse() {
+            var mouse_alive = 0
+            for (let i = 0; i < name_of_mouse.length; i++) {
+                console.log(name_of_mouse[i].status)
+                if (name_of_mouse[i].status== true){
+                    mouse_alive +=1
+                }
+
+            }
+            return console.log("mouse_alive:" + mouse_alive)
+
+        }
+
+        // jerry.sound_of_mouse()
+
+
+        var tom = new  Cat("Tom",100, 150)
+        // tom.catch_mouse(jerry)
+        // tom.catch_mouse(jerry)
+        // console.log(jerry.sound_of_mouse())
+        // tom.attribute_cat()
+        game_start()
+
+        tom.attribute_cat()
+        status_mouse()
+
+
+    </script>
+</body>
+</html>

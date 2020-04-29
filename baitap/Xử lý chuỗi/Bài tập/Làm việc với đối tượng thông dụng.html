@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm việc với các đối tượng thông dụng</title>
+</head>
+<!--Làm việc với Date-->
+
+<div id="Date"></div>
+<body>
+<script>
+    // new Date(year, month, day, hours, minutes, seconds, milliseconds)
+    let ngay_sinh = new Date(1995,6,13,1,0,0)
+    // alert(ngay_sinh)
+    let hien_tai = new Date()
+    // alert((hien_tai.getHours()))
+
+    function show_time(birthday, now) {
+        let nam = now.getYear() - birthday.getYear()
+        let thang = (now.getMonth()+1) - birthday.getMonth()
+        let ngay = (now.getDay()+1) - birthday.getDay()
+        // console.log(birthday.getMonth())
+        // console.log(now.getMonth()+1)
+        let res_thang
+        if (thang<0) {
+            res_thang = nam*12 - thang
+        } else {
+            res_thang = nam*12 + thang
+        }
+        let res_ngay
+        if (ngay > 0){
+            res_ngay = nam*365 - ngay + nam/4
+        } else {
+            res_ngay = nam*365 + ngay + nam/4
+        }
+        alert(`Tôi đã sống ${nam} năm\n ${res_thang} tháng\n${res_ngay} ngay`)
+
+    }
+    // show_time(ngay_sinh,hien_tai)
+
+    //làm việc với Math
+    // Bước 1: Sinh số ngẫu nhiên
+    //
+    // Sinh số ngẫu nhiên từ 0-10
+    //
+    // Sinh số ngẫu nhiên từ 0-400
+    //
+    // Sinh số ngẫu nhiên từ 50-100
+
+
+    //random từ 0- number
+    function random(number){
+        return Math.floor(Math.random()*(number+1))
+    }
+    // alert(random(10))
+
+    //random between 2 arguments
+    function randomInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    // alert(randomInteger(50,100))
+
+
+
+    //
+    // Bước 2: Tìm giá trị nhỏ nhất của mảng
+    //
+    // Tìm giá trị nhỏ nhất trong các số 5, 7, 2, 9
+    //
+
+    // sử dụng sort
+    function minArray() {
+        var input = prompt("nhập vào các số cách nhau bởi dấu phẩy")
+        arr = input.split(",")
+        console.log(arr)
+
+        for (i in arr){
+            console.log(typeof(arr[0]))
+            let min = parseInt(arr[0])
+            if (parseInt(arr[i])< min ){
+                temp = arr[0]
+                arr[0] = arr[i]
+                arr[i] = temp
+            }
+            res = arr[0]
+            console.log(min)
+
+        }
+        return res
+    }
+
+
+    // alert(minArray())
+
+
+    //su dung math
+    function min_arr_use_Math(...a){
+        return (Math.min(...a))
+    }
+    // alert(min_arr_use_Math(3,4,5,6,7,8,8,-7,-12,12,-122222222222))
+
+
+
+    // Bước 3: Tìm luỹ thừa 53
+    //
+    // Bước 4: Tính diện tích của hình tròn có bán kính là 5cm
+
+
+    function luythua(a,b){
+        return Math.pow(a,b)
+    }
+    // alert(luythua(2,3))
+
+    function dientich_hinhtron(r){
+        let res = r*r*Math.PI
+        return res
+    }
+    // console.log(dientich_hinhtron(5))
+</script>
+</body>
+</html>

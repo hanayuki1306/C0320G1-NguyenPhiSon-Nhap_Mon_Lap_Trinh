@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,34,234,5,7,8,9,4,4,2,77,88,33,3333,0,1]
+    var arr1 = [1,1]
+    var arr2 = [2,1]
+    var arr3 = []
+
+    var  arr4 = [5,5,5,5,5,5,5,5]
+    var arrtest = [0,1,2,3,4,5,5,5,6,6,6];
+
+    function sort_array(array){
+        for (let i=0;i<array.length;i++){
+            for (j= i+1; j<array.length;j++){
+                if (array[j]<array[i]){
+                    temp = array[j]
+                    array[j] = array[i]
+                    array[i] = temp
+                }
+            }
+        }
+        console.log(array)
+        return array
+    }
+
+    function find2nd(array) {
+        if (array.length == 1) {
+            return alert(" mảng chỉ có 1 ký tự")
+        } else if (array.length == 2) {
+            if (array[0] == array[1]) {
+                return alert("mảng có 2 ký tự bằng nhau")
+            } else if (array[0] > array[1]) {
+                return alert(array[0])
+            } else {
+                return alert(array[1])
+            }
+        } else if (array.length > 2) {
+            let res_sort = sort_array(array)
+            for (let i=0; i<res_sort.length;i++) {
+                console.log("i = " + i )
+                for (j = res_sort.length - 2; j >=0 ; j--) {
+                    console.log("j = " + j )
+                    let max = res_sort[res_sort.length - 1]
+                    console.log("max = " + max)
+                    if (res_sort[j] < max) {
+                        res = res_sort[j]
+                        return alert(res)
+                    }
+                }
+                return alert("all element is equal")
+            }
+        } else {
+            return alert(" arr is null")
+        }
+    }
+
+
+    let arr5 = [1,1,1,1,1,1,-5]
+    let arr6 = [2,2,2,2,2,-5,-7]
+    find2nd(arr)
+    find2nd(arr1)
+    find2nd(arr2)
+    find2nd(arr3)
+    find2nd(arr4)
+    find2nd(arrtest)
+    find2nd(arr5)
+    find2nd(arr6)
+</script>
+</body>
+</html>
